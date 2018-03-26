@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using rp_api_test.Interfaces;
+using System.Net.Http;
 
-namespace rp_api_test.csproj
+namespace rp_api_test
 {
     public class Startup
     {
@@ -22,6 +24,8 @@ namespace rp_api_test.csproj
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddTransient<HttpMessageHandler, HttpClientHandler>();
+            services.AddTransient<IPhotoRetriever, PhotoRetriever>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

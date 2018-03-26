@@ -6,53 +6,29 @@ using System.Collections.Generic;
 using System.Linq;
 using rp_api_test.Models;
 using Newtonsoft.Json;
+using rp_api_test.Interfaces;
 
-namespace rp_api_test.csproj.Controllers
+namespace rp_api_test.Controllers
 {    
     [Route("api/photos")]
     public class PhotoController : Controller
     {  
-        private class LocalPhoto
-        {
-            public int AlbumId { get;set;}
-            public int Id { get;set;}
-            public string Title { get;set;}
-            public string Url { get;set;}
-            public string ThumbnailUrl { get;set;}
-        }
+        private readonly IPhotoRetriever retriever;
 
-        private class Album
+        public PhotoController(IPhotoRetriever retriever)
         {
-            public int Id { get;set;}
-            public int UserId { get;set;}
-            public string Title { get;set;}
+            this.retriever = retriever;
         }
-        private static readonly HttpClient client = new HttpClient();
 
         [HttpGet]
         public IActionResult GetPhotos()
         {
-            return Ok(GetApiPhotos().Result);
+            return Ok(GetApiPhotos());
         }
 
-        private async Task<IEnumerable<rp_api_test.Models.Photo>> GetApiPhotos()
+        private async Task<IEnumerable<Photo>> GetApiPhotos()
         {
-            var albumsResponse = await client.GetStringAsync("http://jsonplaceholder.typicode.com/albums");
-            var photosResponse = await client.GetStringAsync("http://jsonplaceholder.typicode.com/photos");
-
-            var albums = JsonConvert.DeserializeObject<ICollection<PhotoController.Album>>(albumsResponse);
-            var photos = JsonConvert.DeserializeObject<ICollection<PhotoController.LocalPhoto>>(photosResponse);
-
-            return photos.Join( 
-                albums, 
-                p => p.AlbumId, 
-                a => a.Id, 
-                (p,a) => new rp_api_test.Models.Photo()
-                    { 
-                        Title = p.Title, 
-                        // AlbumName = a.Title, 
-                        // ThumbnailUrl = p.ThumbnailUrl
-                    } );
+            return await retriever.JoinPhotosToAlbumsAsync();
         }
     }
 }

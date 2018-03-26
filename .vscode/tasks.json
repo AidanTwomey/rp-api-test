@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/rp-api-test.csproj/rp-api-test.csproj.csproj"
+                "${workspaceFolder}/rp-api-test.csproj/rp-api-test.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
