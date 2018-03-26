@@ -1,0 +1,14 @@
+C:\Source\rp-api-test\rp-api-test.tests\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Source\rp-api-test\rp-api-test.tests\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+C:\Source\rp-api-test\rp-api-test.tests\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+C:\Source\rp-api-test\rp-api-test.tests\bin\Debug\netcoreapp2.0\rp-api-test.tests.deps.json
+C:\Source\rp-api-test\rp-api-test.tests\bin\Debug\netcoreapp2.0\rp-api-test.tests.runtimeconfig.json
+C:\Source\rp-api-test\rp-api-test.tests\bin\Debug\netcoreapp2.0\rp-api-test.tests.runtimeconfig.dev.json
+C:\Source\rp-api-test\rp-api-test.tests\bin\Debug\netcoreapp2.0\rp-api-test.tests.dll
+C:\Source\rp-api-test\rp-api-test.tests\bin\Debug\netcoreapp2.0\rp-api-test.tests.pdb
+C:\Source\rp-api-test\rp-api-test.tests\obj\Debug\netcoreapp2.0\rp-api-test.tests.csprojResolveAssemblyReference.cache
+C:\Source\rp-api-test\rp-api-test.tests\obj\Debug\netcoreapp2.0\rp-api-test.tests.csproj.CoreCompileInputs.cache
+C:\Source\rp-api-test\rp-api-test.tests\obj\Debug\netcoreapp2.0\rp-api-test.tests.AssemblyInfoInputs.cache
+C:\Source\rp-api-test\rp-api-test.tests\obj\Debug\netcoreapp2.0\rp-api-test.tests.AssemblyInfo.cs
+C:\Source\rp-api-test\rp-api-test.tests\obj\Debug\netcoreapp2.0\rp-api-test.tests.dll
+C:\Source\rp-api-test\rp-api-test.tests\obj\Debug\netcoreapp2.0\rp-api-test.tests.pdb
